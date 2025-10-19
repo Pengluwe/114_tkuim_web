@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的作品集</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- 自訂 CSS（選用） -->
+  <style>
+    /* 你可以在這裡加入自訂樣式 */
+
+  </style>
+</head>
+<body>
+  <!-- 1. 導航列 -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <!-- 請自行完成 -->
+     <div class="container-fluid">
+        <a class="navbar-brand" href="">彭律瑋</a> 
+        
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">首頁</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">關於</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">作品</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">聯絡</a></li>
+                </ul>
+            </div>
+        
+     </div>
+  </nav>     
+
+  <!-- 2. Hero Section -->
+  <section id="home" class="py-5">
+    <div class="container">
+        <h1 class="display-4">My Profile</h1>
+        <h5 class="display-8">你好!我叫彭律瑋，歡迎來到我的網站!</h5>    
+        <a href="https://github.com/Pengluwe" class="btn btn-secondary">github</a>
+        <a href="https://www.instagram.com/weiii0928/?next=%2F" class="btn btn-danger">instagram</a>
+    </div>
+  </section>
+
+  <!-- 3. 關於我 -->
+  <section id="about" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5">關於我</h2>
+      <div class="row align-items-center">
+        <!-- 請自行完成：使用 col-md-6 建立兩欄 -->
+         <div class="col-md-5">
+            <img class="img-fluid" src="照片.jpg">
+         </div>
+         <div class="col-md-6">
+            <p class="text-md-start fs-3 fw-bold" >
+                你好，我叫彭律瑋，目前21歲，是位大學生，目前正就讀淡江大學，興趣是打遊戲以及寫程式，很高興認識你!
+            </p>
+            <p class="text-md-start fs-3 fw-bold">
+                學歷: <br> 土城國小 <br> 辭修高中(國中部) <br> 辭修高中 <br> 淡江大學
+            </p>
+         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 技能展示 -->
+  <section id="skills" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">我的技能</h2>
+      <div class="row">
+        <!-- 請自行完成：至少 3 個 col-md-4 -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <img class="img-fluid" src="226777.png">
+                    <h5 class="card-title">JAVA</h5>
+                    <p class="card-text">JAVA程式語言</p>
+                </div>
+            </div>
+        </div>
+         <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                     <img class="img-fluid" src="Python-Symbol.png">
+                    <h5 class="card-title">Python</h5>
+                    <p class="card-text">Pythont程式語言</p>
+                </div>
+            </div>
+        </div>
+         <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <img class="img-fluid" src="png-clipart-microsoft-sql-server-microsoft-corporation-sql-server-management-studio-database-sql-logo-angle-text.png">
+                    <h5 class="card-title">SQL</h5>
+                    <p class="card-text">sql資料庫</p>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. 作品集 -->
+  <section id="portfolio" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5">作品集</h2>
+      <div class="row">
+         <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="下載.png" class="card-img-top" alt="作品1">
+                <div class="card-body">
+                    <h5 class="card-title">簡易車牌辨識系統</h5>
+                    <p class="card-text">用python製作出簡易版的車牌辨識系統</p>
+                    <a href="https://github.com/Pengluwe/TKU-AI-412630062" class="btn btn-primary">查看詳情</a>
+                </div>
+            </div>
+        </div>
+         <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="螢幕擷取畫面 2025-10-19 214501.png" class="card-img-top" alt="作品1">
+                <div class="card-body">
+                    <h5 class="card-title">自我介紹</h5>
+                    <p class="card-text">簡單的自我介紹網頁</p>
+                    <a href="https://github.com/Pengluwe/114_tkuim_web/blob/main/aboutme.html" class="btn btn-primary mt-auto">查看詳情</a>
+                </div>
+            </div>
+        </div>
+         <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="螢幕擷取畫面 2025-10-19 214925.png" class="card-img-top" alt="作品1">
+                <div class="card-body">
+                    <h5 class="card-title">MyFirst_html</h5>
+                    <p class="card-text">第一個html作品</p>
+                    <a href="https://github.com/Pengluwe/114_tkuim_web/blob/main/myfirst.html" class="btn btn-primary mt-auto">查看詳情</a>
+                </div>
+            </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. 聯絡表單 -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">聯絡我</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+          <form>
+            <!-- 請自行完成表單欄位 -->
+            <div class="mb-3">
+                <label for="name" class="form-label">姓名</label>
+                <input type="text" class="form-control" id="name" required>
+                <label for="email" class="form-label">Email</label>
+                <input type="text" class="form-control" id="" required>
+                <label for="subject" class="form-label">主旨</label>
+                <input type="text" class="form-control" id="" required>
+                <label for="textarea" class="form-label">訊息</label>
+                <textarea type="text" class="form-control" id="textarea" required></textarea>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Footer -->
+  <footer class="bg-dark text-white text-center py-4">
+    <a href="https://www.instagram.com/weiii0928/?next=%2F" class="text-white mx-3 text-decoration-none" aria-label="LinkedIn">Instagram</a>
+    <a href="https://www.threads.com/@weiii0928?__pwa=1" class="text-white mx-3 text-decoration-none" aria-label="LinkedIn">threads</a>
+    <a href="https://www.facebook.com/peng.lu.wei/?locale=zh_TW" class="text-white mx-3 text-decoration-none" aria-label="LinkedIn">Facebook</a>
+    
+    <!-- 請自行完成 -->
+  </footer>
+
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

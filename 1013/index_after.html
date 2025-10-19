@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的網站 - Bootstr</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- 導航列 -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="#">我的網站</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">首頁</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">關於</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">服務</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">聯絡</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 主要內容 -->
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="bg-light py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h1 class="display-4 fw-bold">歡迎來到我的網站</h1>
+            <p class="lead">這是一個示範網頁，展示如何從基本 HTML 導入 Bootstrap 5。</p>
+            <button class="btn btn-primary btn-lg">了解更多</button>
+          </div>
+          <div class="col-lg-6">
+            <img src="data:image/jpeg;base64,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" class="img-fluid rounded"  max-width: 100%;height: auto; alt="Hero Image">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-3">
+      <div class="container">
+        <h2 class="text-center mb-5">關於我們</h2>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="card h-100 text-center">
+              <div class="card-body">
+                <div class="display-4 text-primary mb-3">🎯</div>
+                <h3 class="card-title">專業</h3>
+                <p class="card-text">提供專業的網頁設計服務</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100 text-center">
+              <div class="card-body">
+                <div class="display-4 text-primary mb-3">💡</div>
+                <h3 class="card-title">創新</h3>
+                <p class="card-text">採用最新的技術和設計趨勢</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100 text-center">
+              <div class="card-body">
+                <div class="display-4 text-primary mb-3">⭐</div>
+                <h3 class="card-title">品質</h3>
+                <p class="card-text">確保每個專案都達到最高標準</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-light py-3">
+      <div class="container">
+        <h2 class="text-center mb-5">我們的服務</h2>
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <ul class="list-group">
+              <li class="list-group-item">✅ 網頁設計</li>
+              <li class="list-group-item">✅ 響應式開發</li>
+              <li class="list-group-item">✅ SEO 優化</li>
+              <li class="list-group-item">✅ 維護服務</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-3">
+      <div class="container">
+        <h2 class="text-center mb-5">聯絡我們</h2>
+        <div class="row">
+          <div class="col-lg-6 mx-auto">
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">姓名</label>
+                <input type="text" class="form-control" id="name" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">訊息</label>
+                <textarea class="form-control" id="message" rows="4" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary w-100">送出</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+      <p class="mb-0">&copy; 2024 我的網站. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JavaScript Bundle (包含 Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
