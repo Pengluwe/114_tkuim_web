@@ -22,7 +22,7 @@ output += 'A / B = ' + (numA / numB) + '\n';
 output += 'A > B ? ' + (numA > numB) + '\n';
 output += 'A == B ? ' + (numA == numB) + '（僅比較值）\n';
 output += 'A === B ? ' + (numA === numB) + '（比較值與型態）\n';
-output += 'A % B =' + (numA % numB) + '\n';
+output += 'A % B =' + (numA % numB) + '\n';'輸出A/B的餘數'
 
 alert('計算完成，請看頁面結果與 Console');
 console.log(output);
