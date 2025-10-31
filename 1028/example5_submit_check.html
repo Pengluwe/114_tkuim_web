@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>送出攔截範例</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+  
+    #privacy-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #privacy-modal .modal-content {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      width: 90%;
+      max-width: 600px;
+      max-height: 80vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    #privacy-modal h5 {
+      margin-bottom: 1rem;
+    }
+
+    #privacy-content {
+      text-align: left;
+      overflow-y: auto;
+      flex-grow: 1;
+      margin-bottom: 1rem;
+      padding-right: 5px;
+    }
+  </style>
+</head>
+<body class="p-4">
+  <div class="container">
+    <h3 class="mb-3">聯絡表單（送出攔截）</h3>
+    <form id="full-form" class="needs-validation" novalidate>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label" for="fullName">姓名</label>
+          <input id="fullName" name="fullName" class="form-control" type="text" required aria-describedby="fullName-feedback">
+          <div id="fullName-feedback" class="invalid-feedback">請輸入姓名。</div>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label" for="topic">主題</label>
+          <select id="topic" name="topic" class="form-select" required aria-describedby="topic-feedback">
+            <option value="" selected disabled>請選擇...</option>
+            <option value="support">產品諮詢</option>
+            <option value="career">徵才合作</option>
+          </select>
+          <div id="topic-feedback" class="invalid-feedback">請選擇一個主題。</div>
+        </div>
+      </div>
+
+      <div class="mt-3">
+        <label class="form-label" for="content">留言內容</label>
+        <textarea id="content" name="content" class="form-control" rows="4" minlength="20" required aria-describedby="content-feedback"></textarea>
+        <div id="content-feedback" class="invalid-feedback">請輸入至少 20 字的留言。</div>
+      </div>
+
+      <div class="form-check mt-3">
+        <input id="agree" class="form-check-input" type="checkbox" required>
+        <label class="form-check-label" for="agree">我已閱讀並同意隱私權條款</label>
+        <div class="invalid-feedback">須同意條款才能送出。</div>
+      </div>
+
+      <div class="mt-4">
+        <button id="submitBtn" class="btn btn-primary" type="submit">送出</button>
+        <button id="resetBtn" class="btn btn-outline-secondary ms-2" type="button">清除</button>
+      </div>
+    </form>
+  </div>
+
+  
+  <div id="privacy-modal">
+    <div class="modal-content shadow-lg">
+      <h5>隱私權條款</h5>
+      <div id="privacy-content">
+        <p>感謝您使用本網站服務。我們非常重視您的個人資料保護，以下為我們的隱私權條款摘要：</p>
+        <ul>
+          <li>我們僅會蒐集提供服務所需的最基本資料。</li>
+          <li>所有個資均僅用於聯絡與服務用途，不會對外揭露。</li>
+          <li>使用者可隨時要求查閱、修改或刪除其個人資料。</li>
+          <li>若有條款更新，我們將公告於本網站。</li>
+        </ul>
+        <p>請您詳閱並確認同意後，再勾選「我已閱讀並同意隱私權條款」。</p>
+      </div>
+      <button id="privacy-confirm" class="btn btn-primary w-100">確定</button>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('full-form');
+    const submitBtn = document.getElementById('submitBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const privacyCheckbox = document.getElementById('agree');
+    const privacyModal = document.getElementById('privacy-modal');
+    const privacyConfirmBtn = document.getElementById('privacy-confirm');
+
+    function validateAllInputs(formElement) {
+      let firstInvalid = null;
+      const controls = Array.from(formElement.querySelectorAll('input, select, textarea'));
+      controls.forEach((control) => {
+        control.classList.remove('is-invalid');
+        if (!control.checkValidity()) {
+          control.classList.add('is-invalid');
+          if (!firstInvalid) {
+            firstInvalid = control;
+          }
+        }
+      });
+      return firstInvalid;
+    }
+
+   
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = '送出中...';
+
+      const firstInvalid = validateAllInputs(form);
+      if (firstInvalid) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = '送出';
+        firstInvalid.focus();
+        return;
+      }
+
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      alert('資料已送出，感謝您的聯絡！');
+      form.reset();
+      submitBtn.disabled = false;
+      submitBtn.textContent = '送出';
+    });
+
+    
+    resetBtn.addEventListener('click', () => {
+      form.reset();
+      Array.from(form.elements).forEach((element) => {
+        element.classList.remove('is-invalid');
+      });
+    });
+
+    
+    form.addEventListener('input', (event) => {
+      const target = event.target;
+      if (target.classList.contains('is-invalid') && target.checkValidity()) {
+        target.classList.remove('is-invalid');
+      }
+    });
+
+    privacyCheckbox.addEventListener('change', () => {
+      if (privacyCheckbox.checked) {
+        privacyModal.style.display = 'flex';
+      }
+    });
+
+    
+    privacyConfirmBtn.addEventListener('click', () => {
+      privacyModal.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
