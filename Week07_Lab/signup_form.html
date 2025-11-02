@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>沒出息俱樂部</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>歡迎來到沒出息俱樂部 !</h1>
+        <p class="subtitle">請填寫以下資料來成為沒出息俱樂部的新夥伴</p>
+        
+        <form id="signupForm" novalidate>
+            <!--姓名-->
+            <div class="form-group">
+                <label for="name">姓名<span class="required">*</span></label>
+                <input 
+                    type="text" 
+                    id="name" 
+                    name="name"
+                    required
+                    aria-describedby="name-error"
+                >
+                <p id="name-error" class="error-message" aria-live="polite"></p>
+                <p class="hint">請讓我們看看是誰這麼沒出息</p>
+            </div>
+
+            <Email>
+            <div class="form-group">
+                <label for="email">Email<span class="required">*</span></label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email"
+                    required
+                    aria-describedby="email-error"
+                >
+                <p id="email-error" class="error-message" aria-live="polite"></p>
+            </div>
+
+            <!-- 手機 -->
+            <div class="form-group">
+                <label for="phone">手機 <span class="required">*</span></label>
+                <input 
+                    type="tel" 
+                    id="phone" 
+                    name="phone"
+                    required
+                    pattern="[0-9]{10}"
+                    maxlength="10"
+                    aria-describedby="phone-error"
+                >
+                <p id="phone-error" class="error-message" aria-live="polite"></p>
+            </div>
+
+            <!-- 密碼 -->
+            <div class="form-group">
+                <label for="password">密碼 <span class="required">*</span></label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password"
+                    required
+                    minlength="8"
+                    aria-describedby="password-error"
+                >
+                <p id="password-error" class="error-message" aria-live="polite"></p>
+                <p class="hint">至少 8 碼，需包含英文與數字</p>
+            </div>
+
+            <!-- 確認密碼 -->
+            <div class="form-group">
+                <label for="confirmPassword">確認密碼<span class="required">*</span></label>
+                <input 
+                    type="password" 
+                    id="confirmPassword" 
+                    name="confirmPassword"
+                    required
+                    aria-describedby="confirmPassword-error"
+                >
+                <p id="confirmPassword-error" class="error-message" aria-live="polite"></p>
+            </div>
+
+            <!-- 興趣標籤 -->
+            <div class="form-group">
+                <fieldset>
+                    <legend>興趣標籤 <span class="required">*</span> <span class="count">(已選 <span id="interestCount">0</span> 個)</span></legend>
+                    <div id="interestTags" class="interest-tags" role="group" aria-describedby="interests-error">
+                        <label class="tag">
+                            <input type="checkbox" name="interests" value="運動">
+                            <span>躺平</span>
+                        </label>
+                        <label class="tag">
+                            <input type="checkbox" name="interests" value="音樂">
+                            <span>滑手機</span>
+                        </label>
+                        <label class="tag">
+                            <input type="checkbox" name="interests" value="閱讀">
+                            <span>翹課</span>
+                        </label>
+                        <label class="tag">
+                            <input type="checkbox" name="interests" value="旅遊">
+                            <span>拖延</span>
+                        </label>
+                        <label class="tag">
+                            <input type="checkbox" name="interests" value="美食">
+                            <span>延畢</span>
+                        </label>
+                        <label class="tag">
+                            <input type="checkbox" name="interests" value="攝影">
+                            <span>當薪水小偷</span>
+                        </label>
+                    </div>
+                    <p id="interests-error" class="error-message" aria-live="polite"></p>
+                    <p class="hint">請至少選擇一個興趣</p>
+                </fieldset>
+            </div>
+
+            <!-- 服務條款 -->
+            <div class="form-group">
+                <label class="checkbox-label">
+                    <input 
+                        type="checkbox" 
+                        id="terms" 
+                        name="terms"
+                        required
+                        aria-describedby="terms-error"
+                    >
+                    <span>我已閱讀並同意<span class="required">*</span></span>
+                </label>
+                <p id="terms-error" class="error-message" aria-live="polite"></p>
+            </div>
+
+            <!-- 送出按鈕 -->
+            <button type="submit" id="submitBtn">
+                <span class="btn-text">註冊</span>
+                <span class="loading" style="display: none;"></span>
+            </button>
+
+            <!-- 成功訊息 -->
+            <div id="successMessage" class="success-message" role="alert" style="display: none;">
+                註冊成功！歡迎加入沒出息俱樂部！
+            </div>
+        </form>
+    </div>
+
+    <script src="signup_form.js"></script>
+</body>
+</html>
