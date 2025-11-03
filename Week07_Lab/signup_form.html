@@ -12,9 +12,9 @@
         <p class="subtitle">請填寫以下資料來成為沒出息俱樂部的新夥伴</p>
         
         <form id="signupForm" novalidate>
-            <!--姓名-->
+            <!-- 姓名 -->
             <div class="form-group">
-                <label for="name">姓名<span class="required">*</span></label>
+                <label for="name">姓名 <span class="required">*</span></label>
                 <input 
                     type="text" 
                     id="name" 
@@ -26,9 +26,9 @@
                 <p class="hint">請讓我們看看是誰這麼沒出息</p>
             </div>
 
-            <Email>
+            <!-- Email -->
             <div class="form-group">
-                <label for="email">Email<span class="required">*</span></label>
+                <label for="email">Email <span class="required">*</span></label>
                 <input 
                     type="email" 
                     id="email" 
@@ -52,6 +52,7 @@
                     aria-describedby="phone-error"
                 >
                 <p id="phone-error" class="error-message" aria-live="polite"></p>
+                <p class="hint">請輸入 10 碼數字</p>
             </div>
 
             <!-- 密碼 -->
@@ -71,7 +72,7 @@
 
             <!-- 確認密碼 -->
             <div class="form-group">
-                <label for="confirmPassword">確認密碼<span class="required">*</span></label>
+                <label for="confirmPassword">確認密碼 <span class="required">*</span></label>
                 <input 
                     type="password" 
                     id="confirmPassword" 
@@ -82,33 +83,33 @@
                 <p id="confirmPassword-error" class="error-message" aria-live="polite"></p>
             </div>
 
-            <!-- 興趣標籤 -->
+            <!-- 興趣標籤 (事件委派) -->
             <div class="form-group">
                 <fieldset>
                     <legend>興趣標籤 <span class="required">*</span> <span class="count">(已選 <span id="interestCount">0</span> 個)</span></legend>
                     <div id="interestTags" class="interest-tags" role="group" aria-describedby="interests-error">
                         <label class="tag">
-                            <input type="checkbox" name="interests" value="運動">
+                            <input type="checkbox" name="interests" value="躺平">
                             <span>躺平</span>
                         </label>
                         <label class="tag">
-                            <input type="checkbox" name="interests" value="音樂">
+                            <input type="checkbox" name="interests" value="滑手機">
                             <span>滑手機</span>
                         </label>
                         <label class="tag">
-                            <input type="checkbox" name="interests" value="閱讀">
+                            <input type="checkbox" name="interests" value="翹課">
                             <span>翹課</span>
                         </label>
                         <label class="tag">
-                            <input type="checkbox" name="interests" value="旅遊">
+                            <input type="checkbox" name="interests" value="拖延">
                             <span>拖延</span>
                         </label>
                         <label class="tag">
-                            <input type="checkbox" name="interests" value="美食">
+                            <input type="checkbox" name="interests" value="延畢">
                             <span>延畢</span>
                         </label>
                         <label class="tag">
-                            <input type="checkbox" name="interests" value="攝影">
+                            <input type="checkbox" name="interests" value="當薪水小偷">
                             <span>當薪水小偷</span>
                         </label>
                     </div>
@@ -127,22 +128,67 @@
                         required
                         aria-describedby="terms-error"
                     >
-                    <span>我已閱讀並同意<span class="required">*</span></span>
+                    <span>我已閱讀並同意<a href="#" id="openTermsModal">服務條款</a> <span class="required">*</span></span>
                 </label>
                 <p id="terms-error" class="error-message" aria-live="polite"></p>
             </div>
 
             <!-- 送出按鈕 -->
-            <button type="submit" id="submitBtn">
-                <span class="btn-text">註冊</span>
-                <span class="loading" style="display: none;"></span>
-            </button>
+            <div class="button-group">
+                <button type="reset" id="resetBtn" class="btn-reset">
+                    <span>重設</span>
+                </button>
+                <button type="submit" id="submitBtn" class="btn-submit">
+                    <span class="btn-text">註冊</span>
+                    <span class="loading" style="display: none;"></span>
+                </button>
+            </div>
 
             <!-- 成功訊息 -->
             <div id="successMessage" class="success-message" role="alert" style="display: none;">
-                註冊成功！歡迎加入沒出息俱樂部！
+                ✓ 註冊成功！歡迎加入沒出息俱樂部！
             </div>
         </form>
+    </div>
+
+    <!-- 服務條款彈出視窗 -->
+    <div id="termsModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-modal="true" style="display: none;">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">沒出息俱樂部服務條款</h2>
+                <button type="button" class="modal-close" id="closeModal" aria-label="關閉視窗">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h3>一、服務說明</h3>
+                <p>歡迎加入沒出息俱樂部！本俱樂部致力於讓每個人都能坦然接受自己的「沒出息」狀態，不再為社會期待而焦慮。當您使用本俱樂部服務時，即表示您已閱讀、瞭解並同意接受本服務條款之所有內容。</p>
+                
+                <h3>二、會員權益</h3>
+                <p>作為沒出息俱樂部的一員，您享有以下權益：隨時躺平、毫無罪惡感地拖延、正當理由翹課、以及被鼓勵當個快樂的薪水小偷。我們保證絕不會督促您上進。</p>
+                
+                <h3>三、會員責任</h3>
+                <p>雖然我們鼓勵沒出息，但請妥善保管您的帳號及密碼。如果連這點小事都做不好...嗯，那確實很符合我們俱樂部的精神。</p>
+                
+                <h3>四、隱私權保護</h3>
+                <p>我們會妥善保管您的個人資料，因為我們連八卦都懶得聊。您的沒出息事蹟將僅供內部會員分享使用，絕不會洩漏給那些「積極向上」的人。</p>
+                
+                <h3>五、免責聲明</h3>
+                <p>加入本俱樂部後，若您突然變得很有出息，本俱樂部概不負責。我們也不保證會員能找到工作、升職加薪或實現人生目標。畢竟，那不是我們的風格。</p>
+                
+                <h3>六、服務變更</h3>
+                <p>本俱樂部保留隨時修改或終止服務之權利。不過說實話，我們大概懶得改。</p>
+                
+                <h3>七、爭議處理</h3>
+                <p>如果您對本條款有任何異議，歡迎跟我們說...但我們可能不會理你。因為我們是沒出息俱樂部。</p>
+                
+                <h3>八、最後提醒</h3>
+                <p>人生苦短，不要太認真。加入我們，一起快樂地沒出息吧！</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary" id="closeModalBtn">關閉</button>
+                <button type="button" class="btn-primary" id="agreeTermsBtn">同意並關閉</button>
+            </div>
+        </div>
     </div>
 
     <script src="signup_form.js"></script>
