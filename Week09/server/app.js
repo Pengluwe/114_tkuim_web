@@ -1,8 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 import { config } from 'dotenv';
-import { router as signupRouter } from './routes/signup.js';
-
+import signupRouter from './routes/signup.js';
+//import { router as signupRouter } from './routes/signup.js';
 config();
 
 const app = express();

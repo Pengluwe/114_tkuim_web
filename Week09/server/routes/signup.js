@@ -57,5 +57,5 @@ router.delete('/:id', (req, res) => {
   const [removed] = participants.splice(index, 1);
   res.json({ message: '已取消報名', participant: removed });
 });
-
-export { router };
+export default router;
+//export { router };
