@@ -1,0 +1,8 @@
+{
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon routes/app.js",
+    "start": "node app.js"
+  }
+}
+

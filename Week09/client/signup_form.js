@@ -1,4 +1,9 @@
 // ============================================
+// API 配置
+// ============================================
+const BASE_API_URL = 'http://localhost:3002'; 
+
+// ============================================
 // 表單元素與狀態
 // ============================================
 
@@ -305,29 +310,30 @@ form.addEventListener('submit', async (e) => {
     
     // 收集表單資料
     const formData = new FormData(form);
-const data = {};
-
-// 1. 處理所有標準欄位
-formData.forEach((value, key) => {
-    // 關鍵修正：不再排除 'confirmPassword'。
-    // 只排除 interests 和 terms (因為需要特殊處理)
-    if (key !== 'interests' && key !== 'terms') { 
-        data[key] = value;
-    }
-});
-
-// 2. 處理 interests 陣列
-const interests = [];
-form.querySelectorAll('input[name="interests"]:checked').forEach(cb => {
-    interests.push(cb.value);
-});
-data.interests = interests;
-
-// 3. 關鍵修正：明確設置 terms 的布林值 (true/false)
-data.terms = termsCheckbox.checked;
+    const data = {};
+    
+    // 1. 處理所有標準欄位
+    formData.forEach((value, key) => {
+        // 關鍵修正：不再排除 'confirmPassword'。
+        // 只排除 interests 和 terms (因為需要特殊處理)
+        if (key !== 'interests' && key !== 'terms') { 
+            data[key] = value;
+        }
+    });
+    
+    // 2. 處理 interests 陣列
+    const interests = [];
+    form.querySelectorAll('input[name="interests"]:checked').forEach(cb => {
+        interests.push(cb.value);
+    });
+    data.interests = interests;
+    
+    // 3. 關鍵修正：明確設置 terms 的布林值 (true/false)
+    data.terms = termsCheckbox.checked; 
     
     try {
-        const response = await fetch('http://localhost:3001/api/signup', {
+        // 第 345 行：POST 請求已修正為使用 BASE_API_URL
+        const response = await fetch(`${BASE_API_URL}/api/signup`, { 
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -335,10 +341,9 @@ data.terms = termsCheckbox.checked;
             body: JSON.stringify(data),
         });
 
-        // 檢查回應是否為 JSON 類型 (這是為了避免再次遇到 Unexpected end of JSON input)
+        // 檢查回應是否為 JSON 類型
         const contentType = response.headers.get("content-type");
         if (!contentType || !contentType.includes("application/json")) {
-            // 如果後端回傳非 JSON（例如空的 400 回應），則拋出錯誤讓 catch 處理
             throw new Error(`Server returned non-JSON response. Status: ${response.status}`);
         }
         
@@ -398,7 +403,8 @@ viewListBtn.addEventListener('click', async () => {
     listDisplay.textContent = '正在從伺服器取得資料...';
 
     try {
-        const response = await fetch('/api/signup', {
+        // 第 408 行：GET 請求已修正為使用 BASE_API_URL
+        const response = await fetch(`${BASE_API_URL}/api/signup`, { 
             method: 'GET',
             headers: { 'Content-Type': 'application/json' },
         });
@@ -407,14 +413,14 @@ viewListBtn.addEventListener('click', async () => {
 
         if (response.ok) {
             // 成功取得清單
-            const formattedList = result.list.map(p => ({
+            const formattedList = result.data.map(p => ({
                 姓名: p.name,
                 Email: p.email,
                 興趣: p.interests.join(', ')
             }));
 
             listDisplay.innerHTML = `
-                <h3>目前報名人數：${result.totalCount}</h3>
+                <h3>目前報名人數：${result.total}</h3>
                 <pre>${JSON.stringify(formattedList, null, 2)}</pre>
             `;
             listDisplay.style.backgroundColor = '#e6ffed';
