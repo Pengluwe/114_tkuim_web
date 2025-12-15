@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的課程 - iClass</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Header (Same as index) -->
+    <header class="main-header">
+        <div class="logo-section">
+            <div class="logo-img">iClass</div>
+            <span>淡江大學</span>
+            <span style="font-size: 0.9em; padding-left: 10px;">發現課程</span>
+        </div>
+        <div class="header-right">
+            <span>我的主頁 <i class="fas fa-chevron-down"></i></span>
+            <i class="far fa-calendar-alt"></i>
+            <i class="far fa-bell"></i>
+            <i class="far fa-question-circle"></i>
+            <div class="user-menu">
+                <div class="user-avatar-sm"></div>
+                <span>彭律瑋 <i class="fas fa-chevron-down"></i></span>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- Left Sidebar (Same as index but active state changed) -->
+        <aside class="left-sidebar">
+            <div class="user-profile-widget">
+                <div class="profile-avatar-lg">
+                    <img src="https://via.placeholder.com/150" alt="Avatar">
+                </div>
+                <h3>彭律瑋</h3>
+                <p style="color: #888; font-size: 0.9em;">學生</p>
+            </div>
+
+            <nav class="nav-menu">
+                <div class="section-title" style="padding: 10px 20px; font-size: 0.85em; color: #999;">我的學習</div>
+                <a href="index.html" class="nav-item">
+                    <i class="fas fa-home"></i> 首頁
+                </a>
+                <a href="my_courses.html" class="nav-item active">
+                    <i class="fas fa-book"></i> 我的課程
+                </a>
+                <a href="bulletin.html" class="nav-item">
+                    <i class="fas fa-bullhorn"></i> 公告
+                </a>
+
+                <div class="section-title" style="padding: 15px 20px 5px; font-size: 0.85em; color: #999;">我的資源</div>
+                <a href="#" class="nav-item">
+                    <i class="far fa-folder"></i> 檔案
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-object-group"></i> 互動教材
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-edit"></i> 個人題庫
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <div class="filter-bar">
+                <button class="btn-primary"
+                    style="background: white; color: #555; border: 1px solid #ddd;">加入課程</button>
+                <div style="margin-left: auto; display: flex; gap: 10px;">
+                    <span style="font-size: 0.9em; padding-top: 5px;">排序: 最近開啟</span>
+                </div>
+            </div>
+
+            <div class="filter-bar">
+                <select class="filter-select">
+                    <option>學年 全部</option>
+                </select>
+                <select class="filter-select">
+                    <option>學期 全部</option>
+                </select>
+                <select class="filter-select">
+                    <option>課程狀態 進行中</option>
+                </select>
+                <select class="filter-select">
+                    <option>課程角色 全部</option>
+                </select>
+            </div>
+
+            <div class="course-list-container" id="course-list">
+                <div style="text-align: center; padding: 20px; color: #999;">Loading courses...</div>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+
+</html>

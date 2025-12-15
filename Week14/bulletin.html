@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>公告 - iClass</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="logo-section">
+            <div class="logo-img">iClass</div>
+            <span>淡江大學</span>
+            <span style="font-size: 0.9em; padding-left: 10px;">發現課程</span>
+        </div>
+        <div class="header-right">
+            <span>我的主頁 <i class="fas fa-chevron-down"></i></span>
+            <i class="far fa-bell"></i>
+            <div class="user-menu">
+                <div class="user-avatar-sm"></div>
+                <span>彭律瑋 <i class="fas fa-chevron-down"></i></span>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <aside class="left-sidebar">
+            <div class="user-profile-widget">
+                <div class="profile-avatar-lg">
+                    <img src="https://via.placeholder.com/150" alt="Avatar">
+                </div>
+                <h3>彭律瑋</h3>
+                <p style="color: #888; font-size: 0.9em;">學生</p>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item">
+                    <i class="fas fa-home"></i> 首頁
+                </a>
+                <a href="my_courses.html" class="nav-item">
+                    <i class="fas fa-book"></i> 我的課程
+                </a>
+                <a href="bulletin.html" class="nav-item active">
+                    <i class="fas fa-bullhorn"></i> 公告
+                </a>
+                <div class="section-title" style="padding: 15px 20px 5px; font-size: 0.85em; color: #999;">我的資源</div>
+                <a href="#" class="nav-item"><i class="far fa-folder"></i> 檔案</a>
+                <a href="#" class="nav-item"><i class="fas fa-object-group"></i> 互動教材</a>
+                <a href="#" class="nav-item"><i class="fas fa-edit"></i> 個人題庫</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+
+            <div
+                style="background: white; border-bottom: 1px solid #eee; padding: 15px 20px; display: flex; gap: 30px;">
+                <span
+                    style="color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 13px;">課程公告</span>
+                <span style="color: #666;">機構公告 <span
+                        style="background: #ff5252; color: white; padding: 1px 5px; border-radius: 10px; font-size: 0.7em;">1</span></span>
+            </div>
+
+            <div class="filter-bar" style="margin-top: 20px;">
+                <select class="filter-select">
+                    <option>學年 全部</option>
+                </select>
+                <select class="filter-select">
+                    <option>學期 全部</option>
+                </select>
+                <select class="filter-select">
+                    <option>課程 全部</option>
+                </select>
+                <input type="text" class="search-input" placeholder="公告標題">
+                <button class="btn-primary" style="width: 40px; height: 40px; border-radius: 4px; padding: 0;"><i
+                        class="fas fa-search"></i></button>
+            </div>
+
+            <div class="bulletin-list" id="bulletin-list">
+                <div style="text-align: center; padding: 20px; color: #999;">Loading bulletins...</div>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+
+</html>
