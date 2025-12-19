@@ -26,6 +26,10 @@ app.get('/api/bulletins', (req, res) => {
     res.json(data.bulletins);
 });
 
+app.get('/api/files', (req, res) => {
+    res.json(data.files);
+});
+
 app.get('/api/todos', (req, res) => {
     res.json(data.todos);
 });

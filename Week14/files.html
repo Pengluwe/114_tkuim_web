@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>檔案 - iClass</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="logo-section">
+            <div class="logo-img">iClass</div>
+            <span>淡江大學</span>
+            <span style="font-size: 0.9em; padding-left: 10px;">發現課程</span>
+        </div>
+        <div class="header-right">
+            <span>我的主頁 <i class="fas fa-chevron-down"></i></span>
+            <i class="far fa-bell"></i>
+            <div class="user-menu">
+                <div class="user-avatar-sm"></div>
+                <span>彭律瑋 <i class="fas fa-chevron-down"></i></span>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <aside class="left-sidebar">
+            <div class="user-profile-widget">
+                <div class="profile-avatar-lg">
+                    <img src="https://via.placeholder.com/150" alt="Avatar">
+                </div>
+                <h3>彭律瑋</h3>
+                <p style="color: #888; font-size: 0.9em;">學生</p>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item">
+                    <i class="fas fa-home"></i> 首頁
+                </a>
+                <a href="my_courses.html" class="nav-item">
+                    <i class="fas fa-book"></i> 我的課程
+                </a>
+                <a href="bulletin.html" class="nav-item">
+                    <i class="fas fa-bullhorn"></i> 公告
+                </a>
+
+                <div class="section-title" style="padding: 15px 20px 5px; font-size: 0.85em; color: #999;">我的資源</div>
+                <a href="files.html" class="nav-item active">
+                    <i class="far fa-folder"></i> 檔案
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-object-group"></i> 互動教材
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-edit"></i> 個人題庫
+                </a>
+                <div class="section-title" style="padding: 15px 20px 5px; font-size: 0.85em; color: #999;">帳戶管理</div>
+                <a href="settings.html" class="nav-item">
+                    <i class="fas fa-cog"></i> 個人設定
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+
+            <div class="card" style="min-height: 500px;">
+                <div style="padding: 10px 0; border-bottom: 1px solid #eee; margin-bottom: 15px;">
+                    <span
+                        style="color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; padding-left: 10px; padding-right: 10px;">全部</span>
+                </div>
+
+                <div class="filter-bar" style="border: none; padding: 0; margin-bottom: 15px;">
+                    <div style="display: flex; gap: 10px;">
+                        <button class="btn-primary"
+                            style="background: white; color: #555; border: 1px solid #ddd; font-size: 0.85em;">
+                            <i class="fas fa-bars"></i> 批次操作
+                        </button>
+                        <button class="btn-primary"
+                            style="background: white; color: #555; border: 1px solid #ddd; font-size: 0.85em;">
+                            <i class="fas fa-plus"></i> 新增
+                        </button>
+                    </div>
+                    <div style="margin-left: auto; display: flex; gap: 10px; align-items: center;">
+                        <span style="font-size: 0.85em; color: #999;">類型: 全部 <i class="fas fa-chevron-down"></i></span>
+                        <input type="text" placeholder="關鍵字" class="search-input" style="width: 200px;">
+                        <button class="btn-primary"
+                            style="background: white; color: #555; border: 1px solid #ddd; padding: 5px 15px;">查詢</button>
+                    </div>
+                </div>
+
+                <table class="file-table" id="file-list-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 30px;"><input type="checkbox"></th>
+                            <th>資源名稱 <i class="fas fa-sort"></i></th>
+                            <th>上傳時間 <i class="fas fa-sort"></i></th>
+                            <th>檔案大小 <i class="fas fa-sort"></i></th>
+                            <th>下載數 <i class="fas fa-sort"></i></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Content via JS -->
+                        <tr>
+                            <td colspan="5" style="text-align: center; padding: 20px;">Loading files...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+
+</html>

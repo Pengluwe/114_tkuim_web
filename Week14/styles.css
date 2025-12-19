@@ -371,12 +371,16 @@ ul {
     margin-bottom: 5px;
 }
 
-.course-meta span {
+.course-meta {
+    margin-top: 5px;
+}
+
+.course-tag {
     display: inline-block;
     background: #eee;
-    padding: 2px 8px;
+    padding: 4px 10px;
     border-radius: 4px;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: #666;
     margin-right: 5px;
 }

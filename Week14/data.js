@@ -3,8 +3,70 @@ const data = {
         name: "彭律瑋",
         role: "學生",
         avatar: "https://via.placeholder.com/150",
-        id: "student123"
+        id: "student123",
+        email: "412630062@o365.tku.edu.tw",
+        loginId: "412630062",
+        accountType: "學生",
+        department: "資管系 (日) 3C"
     },
+    files: [
+        {
+            id: "F001",
+            name: "smartwatch",
+            type: "folder",
+            date: "2025.11.04 23:58",
+            size: "--",
+            downloads: "--"
+        },
+        {
+            id: "F002",
+            name: "1141-412630062-彭律瑋-期末報告(21)...",
+            type: "pdf",
+            date: "2025.12.13 23:08",
+            size: "1.66 MB",
+            downloads: 1
+        },
+        {
+            id: "F003",
+            name: "P92_Demo1_TestFile(1).java",
+            type: "code",
+            date: "2025.12.11 17:01",
+            size: "1.99 KB",
+            downloads: 1
+        },
+        {
+            id: "F004",
+            name: "P92_EX1_TestFileChooser.java",
+            type: "code",
+            date: "2025.12.11 17:01",
+            size: "738.00 B",
+            downloads: 1
+        },
+        {
+            id: "F005",
+            name: "P93_Demo2_TestDirectory.java",
+            type: "code",
+            date: "2025.12.11 17:01",
+            size: "1.17 KB",
+            downloads: 1
+        },
+        {
+            id: "F006",
+            name: "P96_EX1_TextWriter.java",
+            type: "code",
+            date: "2025.12.11 17:01",
+            size: "1.92 KB",
+            downloads: 1
+        },
+        {
+            id: "F007",
+            name: "P99_Demo1_StreamTokenizer.java",
+            type: "code",
+            date: "2025.12.11 17:01",
+            size: "980.00 B",
+            downloads: 1
+        }
+    ],
     courses: [
         {
             id: "C001",

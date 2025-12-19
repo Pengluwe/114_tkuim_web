@@ -11,6 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
         loadCourses();
     } else if (page === 'bulletin.html') {
         loadBulletins();
+    } else if (page === 'files.html') {
+        loadFiles();
+    } else if (page === 'settings.html') {
+        loadSettings();
     }
 
     // Always load user data if elements exist
@@ -120,21 +124,21 @@ async function loadCourses() {
 
         courses.forEach(course => {
             const html = `
-             <div class="course-item-row">
-                <div class="course-row-thumb" style="background: ${course.bg}; color: ${course.color};">
+            <div class="course-item-row" onclick="window.location.href='course_content.html?id=${course.id}'" style="cursor: pointer;">
+                <div class="course-row-thumb" style="background-color: #e1f5fe; color: #039be5;">
                     <i class="${course.icon}"></i>
                 </div>
                 <div class="course-row-info">
-                        <h3><a href="course_content.html?id=${course.id}">${course.title}</a></h3>
-                        <div class="course-code">課程代碼: ${course.code}</div>
-                        <div class="course-meta">
-                        <span>${course.department}</span>
-                        <span>${course.type} (${course.credits})</span>
-                        </div>
+                    <h3 style="font-size: 1.2em; font-weight: bold; color: #333;">${course.title}</h3>
+                    <div class="course-code">課程代碼: ${course.code}</div>
+                    <div class="course-meta">
+                        <span class="course-tag">${course.department}</span>
+                        <span class="course-tag">${course.type} (${course.credits})</span>
+                    </div>
                 </div>
-                <div class="course-actions">
-                    <div class="course-stats">${course.semester}</div>
-                    <a href="course_content.html?id=${course.id}" style="color: var(--primary-color); font-size: 0.9em;">更多</a>
+                <div class="course-actions" style="text-align: right; display: flex; flex-direction: column; justify-content: center; align-items: flex-end;">
+                     <div style="font-size: 2em; font-weight: bold; color: #999; margin-bottom: 5px;">${course.semester}</div>
+                     <span style="color: var(--primary-color); font-size: 0.9em;">更多</span>
                 </div>
             </div>`;
             container.innerHTML += html;
