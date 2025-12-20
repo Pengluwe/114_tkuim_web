@@ -1,0 +1,31 @@
+{
+  /* 🛠️ 此檔案路徑：Week11/.vscode/settings.json */
+  "liveServer.settings.port": 5500,
+  "liveServer.settings.root": "/",
+  "liveServer.settings.useLocalIp": true,
+
+  /* 核心解決方案：針對 Docker 與系統層級的全面屏蔽 */
+  "liveServer.settings.ignoreFiles": [
+    ".vscode/**",
+    "node_modules/**",
+    "**/node_modules/**",
+    "server/**",             
+    "db.js",                 // 忽略資料庫連線檔
+    "**/*.json",             // 忽略所有 JSON (防止資料庫寫入觸發刷新)
+    "**/.env",               // 忽略環境變數
+    "**/*.log",              // 忽略日誌
+    "**/*.tmp",              // 忽略系統暫存檔
+    "**/data/**",        
+    "**/.git/**",
+    "**/docker-compose.yml",
+    "**/Dockerfile*"
+  ],
+
+  /* 增加防抖延遲 (毫秒)：避免 Docker 同步檔案時產生的連續刷新 */
+  "liveServer.settings.wait": 2000,
+  
+  /* 在極端情況下可以設為 true 來手動刷新 */
+  "liveServer.settings.NoBrowserRefresh": false,
+  
+  "liveServer.settings.fullReload": false
+}

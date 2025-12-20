@@ -5,6 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>沒出息俱樂部</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 額外加入清單顯示區塊的樣式 */
+        .admin-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px dashed #ccc;
+            text-align: center;
+        }
+        #listDisplay {
+            margin-top: 1.5rem;
+            text-align: left;
+            background: #fdfdfd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        #listDisplay pre {
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: #555;
+            background: #f4f4f4;
+            border: 1px solid #ddd;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -52,7 +75,7 @@
                     aria-describedby="phone-error"
                 >
                 <p id="phone-error" class="error-message" aria-live="polite"></p>
-                <p class="hint">請輸入 8 碼數字</p>
+                <p class="hint">請輸入 10 碼數字 (09開頭)</p>
             </div>
 
             <!-- 密碼 -->
@@ -83,51 +106,26 @@
                 <p id="confirmPassword-error" class="error-message" aria-live="polite"></p>
             </div>
 
-            <!-- 興趣標籤 (事件委派) -->
+            <!-- 興趣標籤 -->
             <div class="form-group">
                 <fieldset>
                     <legend>興趣標籤 <span class="required">*</span> <span class="count">(已選 <span id="interestCount">0</span> 個)</span></legend>
                     <div id="interestTags" class="interest-tags" role="group" aria-describedby="interests-error">
-                        <label class="tag">
-                            <input type="checkbox" name="interests" value="躺平">
-                            <span>躺平</span>
-                        </label>
-                        <label class="tag">
-                            <input type="checkbox" name="interests" value="滑手機">
-                            <span>滑手機</span>
-                        </label>
-                        <label class="tag">
-                            <input type="checkbox" name="interests" value="翹課">
-                            <span>翹課</span>
-                        </label>
-                        <label class="tag">
-                            <input type="checkbox" name="interests" value="拖延">
-                            <span>拖延</span>
-                        </label>
-                        <label class="tag">
-                            <input type="checkbox" name="interests" value="延畢">
-                            <span>延畢</span>
-                        </label>
-                        <label class="tag">
-                            <input type="checkbox" name="interests" value="當薪水小偷">
-                            <span>當薪水小偷</span>
-                        </label>
+                        <label class="tag"><input type="checkbox" name="interests" value="躺平"><span>躺平</span></label>
+                        <label class="tag"><input type="checkbox" name="interests" value="滑手機"><span>滑手機</span></label>
+                        <label class="tag"><input type="checkbox" name="interests" value="翹課"><span>翹課</span></label>
+                        <label class="tag"><input type="checkbox" name="interests" value="拖延"><span>拖延</span></label>
+                        <label class="tag"><input type="checkbox" name="interests" value="延畢"><span>延畢</span></label>
+                        <label class="tag"><input type="checkbox" name="interests" value="當薪水小偷"><span>當薪水小偷</span></label>
                     </div>
                     <p id="interests-error" class="error-message" aria-live="polite"></p>
-                    <p class="hint">請至少選擇一個興趣</p>
                 </fieldset>
             </div>
 
             <!-- 服務條款 -->
             <div class="form-group">
                 <label class="checkbox-label">
-                    <input 
-                        type="checkbox" 
-                        id="terms" 
-                        name="terms"
-                        required
-                        aria-describedby="terms-error"
-                    >
+                    <input type="checkbox" id="terms" name="terms" required>
                     <span>我已閱讀並同意<a href="#" id="openTermsModal">服務條款</a> <span class="required">*</span></span>
                 </label>
                 <p id="terms-error" class="error-message" aria-live="polite"></p>
@@ -135,11 +133,9 @@
 
             <!-- 送出按鈕 -->
             <div class="button-group">
-                <button type="reset" id="resetBtn" class="btn-reset">
-                    <span>重設</span>
-                </button>
+                <button type="reset" id="resetBtn" class="btn-reset"><span>重設</span></button>
                 <button type="submit" id="submitBtn" class="btn-submit">
-                    <span class="btn-text">註冊</span>
+                    <span class="btn-text">加入俱樂部</span>
                     <span class="loading" style="display: none;"></span>
                 </button>
             </div>
@@ -149,6 +145,13 @@
                 ✓ 註冊成功！歡迎加入沒出息俱樂部！
             </div>
         </form>
+        <div class="admin-section">
+            <p style="font-size: 0.85rem; color: #999; margin-bottom: 10px;">(管理員專區：看看還有誰沒出息)</p>
+            <button type="button" id="viewListBtn" class="btn-reset" style="width: auto; padding: 10px 20px;">
+                查看報名清單
+            </button>
+            <div id="listDisplay"></div>
+        </div>
     </div>
 
     <!-- 服務條款彈出視窗 -->
