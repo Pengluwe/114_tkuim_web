@@ -1,4 +1,6 @@
-報名管理系統 (Week 11)這是一個基於 Express.js 與 MongoDB 建立的報名管理系統。本專案實作了完整的 CRUD API，並透過 Express 靜態託管（Static Hosting）技術解決了開發中常見的 CORS 跨域問題。功能特點完整 CRUD API：支援報名資料的建立、讀取、更新與刪除。靜態檔案託管：後端同時負責 API 與前端網頁的傳送，解決跨域與 Live Server 刷新問題。資料庫整合：連線至 MongoDB 儲存報名資訊。動態 CORS 處理：修復了瀏覽器不支援多重 Origin 標頭的問題。環境需求Node.js: v16.0.0+MongoDB: 使用 Docker 容器VS Code: 安裝 REST Client 或使用 Postman 進行測試專案結構 (Project Structure)Week11/
+### 報名管理系統 (Week 11)
+這是一個基於 Express.js 與 MongoDB 建立的報名管理系統。本專案實作了完整的 CRUD API，並透過 Express 靜態託管（Static Hosting）技術解決了開發中常見的 CORS 跨域問題。功能特點完整 CRUD API：支援報名資料的建立、讀取、更新與刪除。靜態檔案託管：後端同時負責 API 與前端網頁的傳送，解決跨域與 Live Server 刷新問題。資料庫整合：連線至 MongoDB 儲存報名資訊。動態 CORS 處理：修復了瀏覽器不支援多重 Origin 標頭的問題。環境需求Node.js: v16.0.0+MongoDB: 使用 Docker 容器VS Code: 安裝 REST Client 或使用 Postman 進行測試專案結構 (Project Structure)Week11/
+"""
 ├── .vscode/
 │   └── settings.json        # Live Server 屏蔽與延遲設定
 ├── client/                  # 前端專案資料夾
@@ -15,9 +17,9 @@
 ├── db.js                    # MongoDB 連線模組 (由 app.js 引用)
 ├── docker-compose.yml       # Docker 容器配置
 └── README.md                # 專案說明文件 (本檔案)
+"""
 
-
-🛠️ 安裝與啟動啟動資料庫容器：在專案根目錄下執行以下指令，啟動 MongoDB 服務：docker compose up -d
+安裝與啟動啟動資料庫容器：在專案根目錄下執行以下指令，啟動 MongoDB 服務：docker compose up -d
 
 
 設定環境變數 (.env)：請在 server/ 目錄下建立 .env 檔案（此檔案包含敏感資訊，已加入 .gitignore）。請參考以下配置：# 伺服器設定
