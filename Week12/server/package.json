@@ -1,5 +1,21 @@
 {
+  "name": "week12-server",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "npx nodemon routes/app.js",
+    "start": "node routes/app.js"
+  },
   "dependencies": {
-    "bcrypt": "^6.0.0"
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.0.0",
+    "nanoid": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
   }
 }
